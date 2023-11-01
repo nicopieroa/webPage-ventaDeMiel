@@ -1,0 +1,14 @@
+### Get information
+GET  http://localhost:1234/pokemon/ditto
+
+### Post a new elemment
+POST http://localhost:1234/pokemon
+Content-Type: application/application/json
+
+{
+    "name": "calito",
+    "type": "normal",
+    "moves": [
+        "transform"
+    ]
+}
