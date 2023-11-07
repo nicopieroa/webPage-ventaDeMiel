@@ -1,14 +1,33 @@
 ### Get information
 GET  http://localhost:1234/
 
-### Post a new elemment
-POST http://localhost:1234/pokemon
-Content-Type: application/application/json
+### Get information from products
+GET  http://localhost:1234/productos
+
+### Get information from products id
+GET  http://localhost:1234/productos/4
+
+### Post new product
+POST  http://localhost:1234/productos
+Content-Type: application/json
 
 {
-    "name": "calito",
-    "type": "normal",
-    "moves": [
-        "transform"
-    ]
+     "name": "Recipiente de 40 kg",
+     "image": {
+        "url": "url",
+        "alt": "alt"
+     },
+    "weight": "40 kg"
 }
+
+### Update a specific part of a product
+PATCH  http://localhost:1234/productos/89a29df6-17c0-4fcf-bed5-7c6fc2911867
+Content-Type: application/json
+
+{
+     "name": "Recipiente de 25 kg",    
+    "weight": 250
+}
+
+### Delete a product
+DELETE  http://localhost:1234/productos/3

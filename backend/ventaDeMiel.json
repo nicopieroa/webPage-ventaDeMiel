@@ -1,0 +1,38 @@
+[
+  {
+    "id": "1",
+    "name": "Frasco Grande",
+    "image": {
+      "url": "",
+      "alt": ""
+    },
+    "weight": "1 kg"
+  },
+  {
+    "id": "2",
+    "name": "Frasco Chico",
+    "image": {
+      "url": "",
+      "alt": ""
+    },
+    "weight": "0.5 kg"
+  },
+  {
+    "id": "3",
+    "name": "Recipiente 4 kg",
+    "image": {
+      "url": "",
+      "alt": ""
+    },
+    "weight": "4 kg"
+  },
+  {
+    "id": "4",
+    "name": "Recipiente 10 kg",
+    "image": {
+      "url": "",
+      "alt": ""
+    },
+    "weight": "10 kg"
+  }
+]
