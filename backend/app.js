@@ -7,6 +7,8 @@ import {
   productPartialValidation
 } from './schemas/productSchema.js'
 
+import { readJSON } from './utils-jsonsReader.js'
+
 // Handle import json
 
 // Future way to import json
@@ -17,9 +19,13 @@ import {
 // const products = JSON.parse(fs.readFileSync('./ventaDeMiel.json', 'utf-8'))
 
 // Recomended way to impor json is using require
-import { createRequire } from 'node:module'
-const require = createRequire(import.meta.url)
-const products = require('./ventaDeMiel.json')
+// import { createRequire } from 'node:module'
+// const require = createRequire(import.meta.url)
+
+// Function to read a json file
+// export const readJSON = (path) => require(path)
+
+const products = readJSON('./ventaDeMiel.json')
 
 const app = express()
 
