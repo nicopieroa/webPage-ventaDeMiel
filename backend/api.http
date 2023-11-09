@@ -5,7 +5,7 @@ GET  http://localhost:1234/
 GET  http://localhost:1234/productos
 
 ### Get information from products id
-GET  http://localhost:1234/productos/4
+GET  http://localhost:1234/productos/2fd6203c-e0ff-4c71-8274-248a98592f46
 
 ### Post new product
 POST  http://localhost:1234/productos
@@ -21,13 +21,13 @@ Content-Type: application/json
 }
 
 ### Update a specific part of a product
-PATCH  http://localhost:1234/productos/89a29df6-17c0-4fcf-bed5-7c6fc2911867
+PATCH  http://localhost:1234/productos/2fd6203c-e0ff-4c71-8274-248a98592f46
 Content-Type: application/json
 
 {
      "name": "Recipiente de 25 kg",    
-    "weight": 250
+    "weight": "250"
 }
 
 ### Delete a product
-DELETE  http://localhost:1234/productos/3
+DELETE  http://localhost:1234/productos/2fd6203c-e0ff-4c71-8274-248a98592f46

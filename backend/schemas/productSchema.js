@@ -1,4 +1,4 @@
-const zod = require('zod')
+import zod from 'zod'
 
 const productSchema = zod.object({
   name: zod.string(),
@@ -10,13 +10,11 @@ const productSchema = zod.object({
 })
 
 // eslint-disable-next-line space-before-function-paren
-function productValidation(product) {
+export function productValidation(product) {
   return productSchema.safeParse(product)
 }
 
 // eslint-disable-next-line space-before-function-paren
-function productPartialValidation(product) {
+export function productPartialValidation(product) {
   return productSchema.partial().safeParse(product)
 }
-
-module.exports = { productValidation, productPartialValidation }

@@ -1,19 +1,32 @@
-const express = require('express')
-const crypto = require('node:crypto')
-const cors = require('cors')
-const products = require('./ventaDeMiel.json')
+import express, { json } from 'express'
+import { randomUUID } from 'node:crypto'
+import cors from 'cors'
 
-const {
+import {
   productValidation,
   productPartialValidation
-} = require('./schemas/productSchema')
+} from './schemas/productSchema.js'
+
+// Handle import json
+
+// Future way to import json
+// import products from './ventaDeMiel.json' with { type: 'json' }
+
+// A way to import json is using fs file system
+// import fs from 'node:fs'
+// const products = JSON.parse(fs.readFileSync('./ventaDeMiel.json', 'utf-8'))
+
+// Recomended way to impor json is using require
+import { createRequire } from 'node:module'
+const require = createRequire(import.meta.url)
+const products = require('./ventaDeMiel.json')
 
 const app = express()
 
 const PORT = process.env.PORT ?? 1234
 
 app.disable('x-powered-by')
-app.use(express.json())
+app.use(json())
 app.use(cors())
 
 // Handle routes
@@ -44,7 +57,7 @@ app.post('/productos', (req, res) => {
   }
 
   const newProduct = {
-    id: crypto.randomUUID(),
+    id: randomUUID(),
     ...reqValidation.data
 
     // reqValidation son los datos que queremos crear ya validados
